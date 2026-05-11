@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="VISAJ Technologies — concepem și construim aplicații și site-uri web ca produse proprietare, gata pentru a fi vândute pe piață. Nu suntem firmă de servicii pentru proiecte la comandă."
+    />
+    <title>VISAJ Technologies — Produse digitale dezvoltate în proprietate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Salt la conținut</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="#">
+          <span class="brand__name">VISAJ</span>
+          <span class="brand__muted">Technologies</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          <span class="nav-toggle__lines" aria-hidden="true"></span>
+          Meniu
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <a href="#produse">Ce dezvoltăm</a>
+          <a href="#cum-lucram">De la idee la vânzare</a>
+          <a href="#despre">Despre noi</a>
+          <a href="#contact" class="site-nav__cta">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="shell hero__layout">
+          <div class="hero__copy">
+            <p class="eyebrow">Studio de produs · nu companie de proiecte la comandă</p>
+            <h1 id="hero-title">
+              Dezvoltăm aplicații și site-uri ca produse proprietare — pe care le punem în vânzare.
+            </h1>
+            <p class="lead">
+              VISAJ Technologies investește în idei verificate tehnologic și pe piață: construim software și experiențe
+              web până la nivel de produs gata livrat (calitate UI/UX, stabil, documentat). Scopul nostru este
+              vânzarea produselor, nu întreținerea unui flux de lucrări personalizate pentru clienți.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn btn--primary" href="#contact">Interes comercial / licențiere</a>
+              <a class="btn btn--secondary" href="#produse">Ce pregătim noi în intern</a>
+            </div>
+
+            <p class="hero__note">
+              Proprietate intelectuală în firmă · Cicluri MVP → produs stabil · Poziționare clară pentru cumpărător /
+              distribuitor
+            </p>
+          </div>
+
+          <div class="hero__media">
+            <div class="hero__surface" aria-hidden="true"></div>
+            <div id="visaj-stage" class="visaj-stage" aria-label="Animație logo VISAJ Technologies"></div>
+            <p class="hero__badge">Logo animat în timp real (WebGL / Three.js)</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="band band--muted" aria-label="Principii">
+        <div class="shell band__cols">
+          <div class="stat-pill">
+            <strong>Produs, nu „lucrare”</strong>
+            <span>fiecare release e gândit ca ceva ce poate fi cumpărat și folosit repetat — nu one-off-uri</span>
+          </div>
+          <div class="stat-pill">
+            <strong>Inginerie curată</strong>
+            <span>arhitectură și cod menținute pentru evoluție, nu doar pentru demo</span>
+          </div>
+          <div class="stat-pill">
+            <strong>Piața decide</strong>
+            <span>filtrăm ideile după problema reală a utilizatorului și fezabilitate, înainte de angajamente mari</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="context" aria-labelledby="context-title">
+        <div class="shell section__narrow">
+          <p class="section__label">De ce vindem produs în loc să executăm comenzi</p>
+          <h2 id="context-title">
+            Modele clasice cu „firmă pentru servicii” nu reflectă cum lucrăm: noi ridicăm valoarea din propriile
+            aplicații și site-uri
+          </h2>
+          <p class="section__deck">
+            Construirea la comandă pentru fiecare client fragmentează focusul. Noi direcționăm aceeași disciplină
+            tehnică spre puține linii de produs, maturizate suficient pentru a avea sens economic la vânzare sau
+            licențiere.
+          </p>
+
+          <div class="cards-3">
+            <article class="card card--risk">
+              <p class="card__tag">Focus</p>
+              <h3>O singură calitate pentru mulți utilizatori</h3>
+              <p>
+                Un produs bun se rafinează din feedback-ul pieței, nu din schimbarea backlog-ului zilnic al unui singur
+                beneficiar — astfel creștem valoarea unui bun negociabil la vânzare.
+              </p>
+            </article>
+
+            <article class="card card--risk">
+              <p class="card__tag">Risc tehnic controlat</p>
+              <h3>Infrastructură și QA ca la produs comercial</h3>
+              <p>
+                Deployment repetabil, securitate de bază, versiuni documentate și teste unde contează — elemente
+                necredibile în „prototip pentru client dar se vinde drept produs”.
+              </p>
+            </article>
+
+            <article class="card card--risk">
+              <p class="card__tag">Imagine</p>
+              <h3>Un brand care atrage după sine</h3>
+              <p>
+                Site-urile și aplicațiile noastre trebuie să arate că sunt gândite pentru utilizator final, nu că sunt
+                doar rezultat intern — asta susține preț și încredere la negocierea vânzării.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--raised" id="produse" aria-labelledby="produse-title">
+        <div class="shell section__narrow">
+          <p class="section__label">Ce fel de proprietăți digitale pregătim</p>
+          <h2 id="produse-title">Tipuri de produse construite în VISAJ pentru a fi scoase pe piață</h2>
+          <p class="section__deck">
+            Nu vindem ore sau „echipe dedicate”. Lista de mai jos descrie domenii în care dezvoltăm intern și pe care le
+            aducem în starea „gata pentru cumpărător” — utilizator enterprises, SaaS pentru segmente definite sau
+            proiecte web cu model comercial clar.
+          </p>
+
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>Aplicații web &amp; experiențe SaaS‑like</h3>
+              <p>
+                Interfețe moderne, API-uri stabile și multi-tenant gândit acolo unde e cazul — produs proprietar pentru
+                vânzare/licență, nu dezvoltare la comandă per client în flow-ul nostru.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Site-uri și platforme cu rol comercial clar</h3>
+              <p>
+                Produse prezentare, hub-uri de conversie sau infrastructuri mai complexe dacă sunt parte dintr-o
+                linie de produs pe care ne concentrăm până la exit comercial.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Funcționalitate cu AI unde adaugă produsului</h3>
+              <p>
+                Embed în fluxuri utilizator cu evaluări și fallbacks sensibile — doar dacă întărește oferta scoasă la
+                vânzare, nu ca efect special de marketing pentru servicii.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Transfer curat către achizitor</h3>
+              <p>
+                Documentație, IP în firmă, predare reproducibilă: elemente importante când căutăm partener sau
+                cumpărător care preia produsul.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cum-lucram" aria-labelledby="process-title">
+        <div class="shell section__narrow">
+          <p class="section__label">De la zero la gata pentru piață</p>
+          <h2 id="process-title">Cum transformăm o linie în produs vindabil</h2>
+          <p class="section__deck">
+            Un singur ciclu repetat pentru fiecare verticală nostră internă — optimizat pentru vânzare finală sau
+            parteneriat, nu pentru întâlniri de status cu diverși clienți de servicii.
+          </p>
+
+          <ol class="steps">
+            <li>
+              <span class="steps__index">01</span>
+              <div>
+                <h3>Idee &amp; adresabilitate pieței</h3>
+                <p>
+                  Ipoteza de problema, cărui utilizator și prin ce canal se vinde mai târziu — decidem dacă merită să
+                  investim construcția proprietară.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="steps__index">02</span>
+              <div>
+                <h3>MVP &amp; fizionomie tehnică</h3>
+                <p>
+                  Arhitectură minimală sănătoasă, slice demonstrabil către stakeholderi și teste suficiente ca să nu
+                  fie prototip fragil pentru vânzare.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="steps__index">03</span>
+              <div>
+                <h3>Iterații către reziliență produs</h3>
+                <p>
+                  Remedierea datoriilor cunoscute, UX finisată, versioning și note de livrare — produs „prezentabil în
+                  due diligence”.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="steps__index">04</span>
+              <div>
+                <h3>Poziționare comercială &amp; negociere</h3>
+                <p>
+                  Material de vânzare (demo, roadmap, proprietate), canal discuție cu cumpărători/parteneri — contactul
+                  de pe siteul nostru pentru asta este punctul unic.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section band--dark" id="despre">
+        <div class="shell two-col">
+          <div>
+            <p class="section__label section__label--invert">Cine suntem</p>
+            <h2>Firma de produs digital: construim ca să deținem și să vindem, nu ca să executăm la cerere.</h2>
+            <p>
+              VISAJ Technologies agregă expertiză de inginerie și design orientat utilizator. Nu promitem „echipe
+              outsourcing” — promitem produse pe care le putem justifica ca investiție proprie până la momentul
+              transferului comercial.
+            </p>
+          </div>
+          <ul class="checklist checklist--invert">
+            <li>Proprietate asupra codului și brandului produsului în pachetele noastre.</li>
+            <li>Transparență pe maturitatea tehnică când discutăm cu un potențial achizitor.</li>
+            <li>Securitate și confidențialitate integrate în design (minim-privilegii, gestionare corectă a secretelor).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cta-panel" id="contact" aria-labelledby="cta-title">
+        <div class="shell cta-panel__inner">
+          <div class="cta-panel__copy">
+            <p class="section__label">Discuții comerciale</p>
+            <h2 id="cta-title">Ești interesat de achiziție, licențiere sau parteneriat pe un produs VISAJ?</h2>
+            <p>
+              Nu răspundem la brief-uri de tip „vrem dezvoltat la comandă X” — dar da, la conversații despre produsele
+              noastre existente sau pipeline-ul public când e cazul.
+            </p>
+          </div>
+          <div class="cta-panel__actions">
+            <a class="btn btn--inverse" href="mailto:contact@visaj.tech?subject=Interes%20comercial%20VISAJ%20Technologies"
+              >Scrie-ne pe email</a
+            >
+            <button type="button" class="btn btn--secondary-on-tan" data-copy-email>
+              Copiază adresa email
+            </button>
+          </div>
+          <p class="cta-panel__fineprint">
+            Înlocuiește <kbd>contact@visaj.tech</kbd> cu adresa reală atunci când domeniul este activ.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <p class="site-footer__brand">© <span id="year"></span> VISAJ Technologies</p>
+        <div class="site-footer__links">
+          <a href="#produse">Ce dezvoltăm</a>
+          <a href="#contact">Contact</a>
+          <span class="muted">Animație logo cu Three.js</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+    <script>
+      document.getElementById("year").textContent = String(new Date().getFullYear());
+      const navBtn = document.querySelector("[data-nav-toggle]");
+      const nav = document.getElementById("site-nav");
+      if (navBtn && nav) {
+        navBtn.addEventListener("click", () => {
+          const open = nav.classList.toggle("is-open");
+          navBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        nav.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            nav.classList.remove("is-open");
+            navBtn.setAttribute("aria-expanded", "false");
+          }),
+        );
+      }
+
+      const copyBtn = document.querySelector("[data-copy-email]");
+      if (copyBtn && navigator.clipboard?.writeText) {
+        copyBtn.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText("contact@visaj.tech");
+            copyBtn.textContent = "Adresa a fost copiată";
+            setTimeout(() => {
+              copyBtn.textContent = "Copiază adresa email";
+            }, 2200);
+          } catch {
+            /* ignore */
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

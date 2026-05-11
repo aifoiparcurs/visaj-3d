@@ -1,0 +1,69 @@
+{
+  "_comment": "Snapshot parametri animație VISAJ (Three.js). Restaurare completă: copiază vizaj-orbit-logo-animation__SOURCE-BACKUP-2026-05-11.js în src/main.js + asset-uri din public/assets/.",
+  "exported": "2026-05-11",
+  "sourceModule": "../src/main.js",
+  "loopDurationSec": 13.5,
+  "textures": [
+    "/assets/orbit.png",
+    "/assets/letter-a.png",
+    "/assets/letter-i.png",
+    "/assets/letter-j.png",
+    "/assets/letter-s.png",
+    "/assets/letter-v.png",
+    "/assets/technologies.png"
+  ],
+  "logoScale": 0.0064453125,
+  "logoLetterHeight": 0.7541015624999999,
+  "logoMetrics": {
+    "v": { "width": 0.8958984375, "height": 0.7541015624999999 },
+    "i": { "width": 0.1611328125, "height": 0.7541015624999999 },
+    "s": { "width": 0.734765625, "height": 0.7541015624999999 },
+    "a": { "width": 0.9410156249999999, "height": 0.7541015624999999 },
+    "j": { "width": 0.5091796875, "height": 0.7541015624999999 },
+    "orbit": { "width": 3.029296875, "height": 2.3525390625 }
+  },
+  "logoLayout": {
+    "letterY": 0.2513671875,
+    "leftStartX": -0.28,
+    "leftClosedX": 0,
+    "leftSeparatedX": -0.48,
+    "centerStartX": -0.25458984375,
+    "rightStartX": 0.28,
+    "rightClosedX": 0,
+    "rightSeparatedX": 0.42,
+    "vX": -1.4244140625,
+    "iX": -0.8185546874999999,
+    "sX": -0.25458984375,
+    "aX": 0.62841796875,
+    "jX": 1.546875
+  },
+  "orbitShape": {
+    "centerX": 0.11,
+    "centerY": 0.06,
+    "radiusX": 1.51,
+    "radiusY": 1.18,
+    "rotation": 0.46,
+    "loops": 2
+  },
+  "orbitMotion": {
+    "pathOuterPad": 1.7,
+    "rightPinch": 0.08,
+    "verticalSquash": 0.78,
+    "startAmount": 1.383,
+    "revolutions": 0.75,
+    "amountTravelPerLoop": 0.375,
+    "leftLineAmountResolved": 1.0006344583596611,
+    "rightLineAmountResolved": 0.9926877018652445
+  },
+  "timelineSmoothRangesSec": [
+    { "name": "leftOrbitSettle", "start": 0, "end": 8 },
+    { "name": "rightOrbitPhase1", "start": 0, "end": 7.45 },
+    { "name": "rightOrbitPhase2", "start": 7.2, "end": 7.92 },
+    { "name": "rightPreMorphClose", "start": 7.85, "end": 8.38 },
+    { "name": "morphWindow", "start": 8.5, "end": 10.5, "note": "morph = 1 - smoothRange(...)" },
+    { "name": "wFlipOut", "start": 8.5, "end": 9.85 },
+    { "name": "wEdgeOut", "start": 9.85, "end": 10.15 },
+    { "name": "lettersCloseProgress", "start": 10.2, "end": 11.5 },
+    { "name": "outroFade", "start": 12.5, "end": 13.5 }
+  ]
+}
