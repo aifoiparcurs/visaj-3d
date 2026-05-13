@@ -23,12 +23,14 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 mount.appendChild(renderer.domElement);
 
-const resizeObserver = new ResizeObserver(() => {
-  fitRendererToMount();
-});
-resizeObserver.observe(mount);
-window.addEventListener("resize", fitRendererToMount);
-fitRendererToMount();
+/**
+ * Spațiu suplimentar (unități de scenă) pe partea stângă a camerei ortografice,
+ * astfel încât la rotirea / morph-ul celor două „AI” litera „I” și orbita să nu fie tăiate.
+ */
+const VIEW_PADDING_LEFT = 0.62;
+
+/** Mută întreg logo-ul spre stânga în cadru (echilibrează padding-ul asimetric al camerei). */
+const ROOT_PAN_X = -VIEW_PADDING_LEFT * 0.52;
 
 function fitRendererToMount() {
   const width = Math.max(1, Math.floor(mount.clientWidth));
@@ -37,7 +39,7 @@ function fitRendererToMount() {
   const viewHeight = aspect > 1 ? 4.65 : 6.15;
   const viewWidth = viewHeight * aspect;
 
-  camera.left = -viewWidth / 2;
+  camera.left = -viewWidth / 2 - VIEW_PADDING_LEFT;
   camera.right = viewWidth / 2;
   camera.top = viewHeight / 2;
   camera.bottom = -viewHeight / 2;
@@ -45,6 +47,13 @@ function fitRendererToMount() {
 
   renderer.setSize(width, height);
 }
+
+const resizeObserver = new ResizeObserver(() => {
+  fitRendererToMount();
+});
+resizeObserver.observe(mount);
+window.addEventListener("resize", fitRendererToMount);
+fitRendererToMount();
 
 const intersectionObserver = new IntersectionObserver(
   (entries) => {
@@ -177,6 +186,9 @@ async function init() {
   setDepthTest(state.technologies.userData.text, false);
 
   addAtmosphere();
+
+  root.position.x = ROOT_PAN_X;
+
   fitRendererToMount();
   animate();
 }
