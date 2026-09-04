@@ -577,9 +577,7 @@ a:hover {
   inset: 6% 4% auto 4%;
   height: 82%;
   border-radius: var(--radius-xl);
-  background:
-    radial-gradient(circle at 44% 26%, rgba(255, 255, 255, 0.32), transparent 56%),
-    radial-gradient(circle at 78% 78%, rgba(150, 156, 168, 0.22), transparent 52%);
+  background: none;
   pointer-events: none;
 }
 
@@ -588,26 +586,11 @@ a:hover {
   z-index: 1;
   min-height: clamp(310px, 50vw, 480px);
   border-radius: var(--radius-xl);
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  background:
-    radial-gradient(ellipse 125% 85% at 50% -18%, rgba(255, 255, 255, 0.38), transparent 58%),
-    radial-gradient(ellipse 85% 65% at 100% 105%, rgba(120, 126, 138, 0.14), transparent 52%),
-    radial-gradient(ellipse 70% 55% at 0% 92%, rgba(175, 180, 192, 0.28), transparent 50%),
-    linear-gradient(
-      168deg,
-      #dcdfe8 0%,
-      #d2d6e0 35%,
-      #c8cdd8 68%,
-      #bdc3d0 100%
-    );
+  border: 1px solid transparent;
+  background: transparent;
   backdrop-filter: none;
   overflow: hidden;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.62),
-    inset 0 -16px 38px rgba(255, 255, 255, 0.05),
-    inset 0 0 72px rgba(255, 255, 255, 0.04),
-    0 26px 72px rgba(15, 12, 35, 0.34),
-    0 0 0 1px rgba(140, 146, 160, 0.22);
+  box-shadow: none;
 }
 
 .visaj-stage canvas {

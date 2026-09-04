@@ -5,10 +5,12 @@ if (!mount) {
   throw new Error('VISAJ: lipsește elementul cu id="visaj-stage" pentru animație.');
 }
 
+const captureMode = new URLSearchParams(window.location.search).has("capture");
 const startTime = performance.now();
 const loopDuration = 13.5;
 let animationFrameId = null;
 let isStageVisible = true;
+let captureNow = 0;
 
 const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 50);
@@ -21,7 +23,10 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.setClearColor(0x000000, 0);
 mount.appendChild(renderer.domElement);
+
+const LETTER_COLOR = new THREE.Color(0xf3f6ff);
 
 /**
  * Spațiu suplimentar (unități de scenă) pe partea stângă a camerei ortografice,
@@ -55,6 +60,19 @@ resizeObserver.observe(mount);
 window.addEventListener("resize", fitRendererToMount);
 fitRendererToMount();
 
+if (captureMode) {
+  window.__visajCapture = {
+    duration: loopDuration,
+    ready: false,
+    setTime(seconds) {
+      captureNow = seconds;
+      if (!state.orbit) return;
+      updateTimeline(seconds % loopDuration);
+      renderer.render(scene, camera);
+    },
+  };
+}
+
 const intersectionObserver = new IntersectionObserver(
   (entries) => {
     const next = entries[0]?.isIntersecting ?? true;
@@ -73,7 +91,9 @@ const intersectionObserver = new IntersectionObserver(
   },
   { threshold: [0, 0.12, 0.25], rootMargin: "40px 0px 40px 0px" },
 );
-intersectionObserver.observe(mount);
+if (!captureMode) {
+  intersectionObserver.observe(mount);
+}
 
 const root = new THREE.Group();
 scene.add(root);
@@ -191,6 +211,9 @@ async function init() {
 
   fitRendererToMount();
   animate();
+  if (captureMode && window.__visajCapture) {
+    window.__visajCapture.ready = true;
+  }
 }
 
 function createTechnologiesPlane(texture) {
@@ -199,7 +222,7 @@ function createTechnologiesPlane(texture) {
   const planeHeight = image.height * logoScale;
   const group = new THREE.Group();
   const depthMask = createDepthMaskPlane(texture, planeWidth, planeHeight);
-  const text = createPlane(texture, planeWidth, planeHeight, 0);
+  const text = createPlane(texture, planeWidth, planeHeight, 0, LETTER_COLOR);
   depthMask.position.z = 0.002;
   text.position.z = 0;
   group.add(depthMask, text);
@@ -252,7 +275,7 @@ function createCenterGroup(textures) {
   const wTexture = createRoundedWTexture();
   const wHeight = sHeight * 0.48;
   const wWidth = wHeight * wTexture.userData.aspect;
-  const w = createPlane(wTexture, wWidth, wHeight, 0);
+  const w = createPlane(wTexture, wWidth, wHeight, 0, LETTER_COLOR);
   w.position.set(sWidth / 2 + wWidth / 2 + 0.025, -sHeight / 2 + wHeight / 2, 0.02);
   group.add(s, w);
   group.position.set(logoLayout.sX, logoLayout.letterY, 0);
@@ -325,6 +348,12 @@ function addAtmosphere() {
 }
 
 function animate() {
+  if (captureMode) {
+    updateTimeline(captureNow % loopDuration);
+    renderer.render(scene, camera);
+    return;
+  }
+
   if (!isStageVisible) {
     animationFrameId = null;
     return;
@@ -580,9 +609,10 @@ function ellipseRadialDistance(angle) {
   );
 }
 
-function createPlane(texture, width, height, opacity = 1) {
+function createPlane(texture, width, height, opacity = 1, color) {
   const material = new THREE.MeshBasicMaterial({
     map: texture,
+    color: color ?? 0xffffff,
     transparent: true,
     premultipliedAlpha: texture.userData.premultiplied === true,
     opacity,
@@ -612,6 +642,7 @@ function createVisualPlane(texture, visualWidth, visualHeight, opacity = 1) {
 
   const material = new THREE.MeshBasicMaterial({
     map: texture,
+    color: LETTER_COLOR,
     transparent: true,
     premultipliedAlpha: texture.userData.premultiplied === true,
     opacity,
@@ -670,7 +701,7 @@ async function loadMaskedTexture(src, type) {
 
   const alphaShaped = shapeAlphaForPolish(alphaRaw, w, h);
 
-  const tint = type === "orbit" ? [255, 216, 32] : [12, 13, 13];
+  const tint = type === "orbit" ? [255, 216, 32] : [255, 255, 255];
   for (let i = 0, j = 0; i < pixels.length; i += 4, j += 1) {
     const a = alphaShaped[j];
     pixels[i]     = Math.round(tint[0] * a);
@@ -767,7 +798,7 @@ function createRoundedWTexture() {
   const leftValley = left + (right - left) * 0.25;
   const rightValley = left + (right - left) * 0.75;
 
-  context.strokeStyle = "#0c0d0d";
+  context.strokeStyle = "#ffffff";
   context.lineWidth = strokeWidth;
   context.lineCap = "round";
   context.lineJoin = "round";
