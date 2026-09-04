@@ -175,7 +175,6 @@
 
         <div class="shell hero__layout">
           <div class="hero__copy">
-            <p class="hero__badge">Visaj Technologies</p>
             <h1 id="hero-title">
               <span class="hero__gradient-text">Produse inteligente</span> pentru realitatea din afaceri.
             </h1>
@@ -556,6 +555,45 @@
           }),
         );
       }
+
+      const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
+      const brand = document.querySelector(".brand");
+
+      function isHomeHash() {
+        const hash = location.hash;
+        return !hash || hash === "#" || hash === "#hero";
+      }
+
+      function goToPageTop() {
+        if (location.hash) {
+          history.replaceState(null, "", location.pathname + location.search);
+        }
+        window.scrollTo(0, 0);
+      }
+
+      function pinTopOnMobileHome() {
+        if (!isMobile() || !isHomeHash()) return;
+        if ("scrollRestoration" in history) {
+          history.scrollRestoration = "manual";
+        }
+        goToPageTop();
+      }
+
+      if (brand) {
+        brand.addEventListener("click", (e) => {
+          if (!isMobile()) return;
+          e.preventDefault();
+          if (nav && navBtn) {
+            nav.classList.remove("is-open");
+            navBtn.setAttribute("aria-expanded", "false");
+          }
+          goToPageTop();
+        });
+      }
+
+      pinTopOnMobileHome();
+      window.addEventListener("pageshow", pinTopOnMobileHome);
+      window.addEventListener("load", pinTopOnMobileHome);
 
       const copyBtn = document.querySelector("[data-copy-email]");
       if (copyBtn && navigator.clipboard?.writeText) {
