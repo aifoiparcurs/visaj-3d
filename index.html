@@ -18,11 +18,11 @@
     <meta name="author" content="Visaj Technologies" />
     <meta name="theme-color" content="#1b1732" />
 
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico?v=9" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg?v=9" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png?v=9" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/favicon-16.png?v=9" sizes="16x16" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=9" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <meta property="og:type" content="website" />
@@ -67,10 +67,26 @@
             "email": "visajtech@visaj.ro",
             "logo": "https://www.visajtech.com/og-image.png",
             "description": "Visaj Technologies construiește produse software AI-first pentru procese operaționale reale: automatizare aplicată și sisteme care înțeleg tipare și context.",
+            "founder": { "@id": "https://www.visajtech.com/sasa-cioringa#person" },
             "brand": {
               "@type": "Brand",
               "name": "AIFoiParcurs"
             }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://www.visajtech.com/sasa-cioringa#person",
+            "name": "Sasa Cioringa",
+            "alternateName": ["Sasha Cioringa", "Saša Ćoringa"],
+            "url": "https://www.visajtech.com/sasa-cioringa",
+            "jobTitle": "Founder & CEO",
+            "worksFor": { "@id": "https://www.visajtech.com/#organization" },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Universitatea Politehnica Timișoara"
+            },
+            "sameAs": ["https://www.linkedin.com/in/sasha-cioringa-95757713"],
+            "image": "https://www.visajtech.com/assets/sasa-cioringa.jpg"
           },
           {
             "@type": "WebSite",
@@ -156,12 +172,10 @@
         </button>
 
         <nav id="site-nav" class="site-nav" aria-label="Principal">
+          <a href="/sasa-cioringa">Fondator</a>
           <a href="#dezvoltam">Ce dezvoltăm</a>
-          <a href="#companii">Companii</a>
           <a href="#aifoiparcurs">AIFoiParcurs</a>
-          <a href="#viziune">Viziune</a>
-          <a href="#tehnologie">Tehnologie</a>
-          <a href="#blog">Blog</a>
+          <a href="/blog">Blog</a>
           <a href="#intrebari">Întrebări</a>
           <a href="#contact" class="site-nav__cta">Contact</a>
         </nav>
@@ -336,6 +350,11 @@
               Ne bazăm pe sisteme care înțeleg tipare, context și comportament — pentru că acolo apare valoarea durabilă,
               nu în demonstrații izolate.
             </p>
+            <p class="vision-block__founder">
+              Visaj Technologies este condusă de
+              <a href="/sasa-cioringa">Sasa Cioringa</a>, Founder &amp; CEO. Anterior General Manager al Continental
+              Automotive Serbia, cu peste 20 de ani de experiență în automotive și tehnologie.
+            </p>
           </div>
         </div>
       </section>
@@ -362,58 +381,51 @@
         </div>
       </section>
 
-      <section class="section reveal" id="blog" aria-labelledby="blog-title">
-        <div class="shell">
-          <header class="section-head">
+      <section class="section blog-split reveal" id="blog" aria-labelledby="blog-title">
+        <div class="shell blog-split__grid">
+          <div class="blog-split__copy">
             <h2 id="blog-title">Blog</h2>
-            <p class="section__deck section__deck--narrow">
-              Note scurte despre produse, decizii de produs și ce înseamnă AI aplicat în fluxuri operaționale.
+            <p class="section__deck">
+              Articole despre business, tehnologie, AI, automotive și digitalizare. Semnate de fondator, pe domeniul
+              Visaj Technologies.
             </p>
-          </header>
+            <a class="byline" href="/sasa-cioringa">
+              <img src="/assets/sasa-cioringa.jpg" alt="" width="96" height="96" />
+              <span>
+                <span class="byline__name">Sasa Cioringa</span>
+                <span class="byline__role">Founder &amp; CEO, Visaj Technologies</span>
+              </span>
+            </a>
+            <div class="cta-row">
+              <a class="btn btn--primary" href="/blog">Deschide blogul</a>
+              <a class="btn btn--ghost" href="/sasa-cioringa">Pagina de fondator</a>
+            </div>
+          </div>
 
-          <div class="journal-grid">
-            <article class="journal-card">
-              <time class="journal-card__date" datetime="2026">În curând</time>
-              <h3>Lansăm direcția AI-first a Visaj Technologies</h3>
-              <p>Ce înseamnă pentru noi „produs inteligent”: AI integrat în flux, nu bifă de marketing.</p>
-            </article>
-            <article class="journal-card">
-              <time class="journal-card__date" datetime="2026">În curând</time>
-              <h3>AIFoiParcurs: primul nostru produs inteligent</h3>
-              <p>
-                Primul produs al companiei: foi de parcurs mai curate, cu mai puțină reintroducere manuală a acelorași
-                date.
-              </p>
-            </article>
-            <article class="journal-card">
-              <time class="journal-card__date" datetime="2026">În curând</time>
-              <h3>Cum schimbă AI-ul procesele operaționale repetitive</h3>
-              <p>Trei întrebări înainte să automatizezi: unde apare eroarea, ce date ai și cine răspunde după livrare.</p>
-            </article>
-            <article class="journal-card">
-              <time class="journal-card__date" datetime="2026">Ghid</time>
-              <h3>Ce sunt foile de parcurs auto generate cu AI</h3>
-              <p>
-                O foaie de parcurs adună trasee, kilometri și consum într-un document coerent. Cu AI, o mare parte din
-                completare pornește din datele pe care le ai deja, nu din reintroducere manuală.
-              </p>
-            </article>
-            <article class="journal-card">
-              <time class="journal-card__date" datetime="2026">Automatizare</time>
-              <h3>De unde începi automatizarea într-o companie</h3>
-              <p>
-                Începe cu pașii repetitivi și bine definiți: aceleași verificări, aceleași documente, aceleași reguli.
-                Sunt cei mai ușor de automatizat și cu impactul cel mai vizibil.
-              </p>
-            </article>
-            <article class="journal-card">
-              <time class="journal-card__date" datetime="2026">Integrare</time>
-              <h3>Cum unești date din mai multe sisteme</h3>
-              <p>
-                Prin API-uri moderne și o arhitectură cu limite clare, datele din aplicații separate ajung într-un flux
-                unic — mai puține copieri manuale și mai puține inconsistențe între segmente.
-              </p>
-            </article>
+          <div class="blog-split__shelf">
+            <div class="blog-split__cards">
+              <a class="journal-card" href="/blog/conferinta-presa-novi-sad-2017">
+                <time class="journal-card__date" datetime="2017-05-28">28 mai 2017</time>
+                <h3>Prima conferință de presă</h3>
+                <p>Anunțul centrului R&amp;D Continental din Novi Sad.</p>
+              </a>
+              <a class="journal-card" href="/blog/centru-rd-novi-sad-2018">
+                <time class="journal-card__date" datetime="2018-03-07">7 mar. 2018</time>
+                <h3>Deschiderea centrului R&amp;D</h3>
+                <p>Circa 100 de ingineri, pe interior și siguranță.</p>
+              </a>
+              <article class="journal-card">
+                <time class="journal-card__date">În curând</time>
+                <h3>KreNI 6</h3>
+                <p>Apariție ca speaker, 2020.</p>
+              </article>
+              <article class="journal-card">
+                <time class="journal-card__date">În curând</time>
+                <h3>Fabrica din Novi Sad</h3>
+                <p>Prima unitate de electronică auto, 2021.</p>
+              </article>
+            </div>
+            <div class="blog-split__fog" aria-hidden="true"></div>
           </div>
         </div>
       </section>
@@ -529,8 +541,9 @@
       <div class="shell site-footer__inner">
         <p class="site-footer__brand">© <span id="year"></span> Visaj Technologies</p>
         <div class="site-footer__links">
+          <a href="/sasa-cioringa">Fondator</a>
+          <a href="/blog">Blog</a>
           <a href="#dezvoltam">Ce dezvoltăm</a>
-          <a href="#companii">Companii</a>
           <a href="#aifoiparcurs">AIFoiParcurs</a>
           <a href="#intrebari">Întrebări</a>
           <a href="#contact">Contact</a>

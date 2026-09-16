@@ -5,12 +5,10 @@ if (!mount) {
   throw new Error('VISAJ: lipsește elementul cu id="visaj-stage" pentru animație.');
 }
 
-const captureMode = new URLSearchParams(window.location.search).has("capture");
 const startTime = performance.now();
 const loopDuration = 13.5;
 let animationFrameId = null;
 let isStageVisible = true;
-let captureNow = 0;
 
 const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 50);
@@ -60,19 +58,6 @@ resizeObserver.observe(mount);
 window.addEventListener("resize", fitRendererToMount);
 fitRendererToMount();
 
-if (captureMode) {
-  window.__visajCapture = {
-    duration: loopDuration,
-    ready: false,
-    setTime(seconds) {
-      captureNow = seconds;
-      if (!state.orbit) return;
-      updateTimeline(seconds % loopDuration);
-      renderer.render(scene, camera);
-    },
-  };
-}
-
 const intersectionObserver = new IntersectionObserver(
   (entries) => {
     const next = entries[0]?.isIntersecting ?? true;
@@ -91,9 +76,7 @@ const intersectionObserver = new IntersectionObserver(
   },
   { threshold: [0, 0.12, 0.25], rootMargin: "40px 0px 40px 0px" },
 );
-if (!captureMode) {
-  intersectionObserver.observe(mount);
-}
+intersectionObserver.observe(mount);
 
 const root = new THREE.Group();
 scene.add(root);
@@ -211,9 +194,6 @@ async function init() {
 
   fitRendererToMount();
   animate();
-  if (captureMode && window.__visajCapture) {
-    window.__visajCapture.ready = true;
-  }
 }
 
 function createTechnologiesPlane(texture) {
@@ -348,12 +328,6 @@ function addAtmosphere() {
 }
 
 function animate() {
-  if (captureMode) {
-    updateTimeline(captureNow % loopDuration);
-    renderer.render(scene, camera);
-    return;
-  }
-
   if (!isStageVisible) {
     animationFrameId = null;
     return;
