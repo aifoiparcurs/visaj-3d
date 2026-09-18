@@ -1695,10 +1695,52 @@ a.fh__portrait {
 }
 
 @media (min-width: 1080px) {
+  .page-blog .fh__flow {
+    overflow: visible;
+    position: relative;
+  }
+
   .page-blog .fh__portrait {
     width: min(344px, 28vw);
-    margin: 0 0 calc(1.35rem + 14px) calc(1.75rem + 8px);
-    transform: translate(-8px, 10px);
+    margin: 0 0 1.35rem calc(1.75rem + 8px);
+    transform: translate(12px, -20px);
+  }
+
+  .page-blog .ih h1 {
+    margin-bottom: 1.05rem;
+  }
+
+  .page-blog .ih__lead {
+    margin-bottom: 1.15rem;
+  }
+
+  .page-blog .ih__lead-br {
+    display: block;
+  }
+
+  .page-blog .ih__byline {
+    position: absolute;
+    z-index: 1;
+    top: -20px;
+    left: 0;
+    right: calc(min(344px, 28vw) + 1.75rem + 8px);
+    height: min(344px, 28vw);
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .page-blog .ih__byline-stack {
+    display: block;
+  }
+
+  .page-blog .ih__person-name {
+    margin-right: 0.35em;
+  }
+
+  .page-blog .ih__role-br {
+    display: block;
   }
 }
 
@@ -2259,6 +2301,10 @@ a.fh__portrait {
   color: var(--text-secondary);
 }
 
+.ih__lead-br {
+  display: none;
+}
+
 .ih__byline {
   display: flex;
   flex-direction: column;
@@ -2267,6 +2313,17 @@ a.fh__portrait {
   margin: 0 0 0.35rem;
   text-decoration: none;
   color: inherit;
+}
+
+.ih__byline-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.ih__role-br {
+  display: none;
 }
 
 .ih__person-name {
