@@ -24,6 +24,9 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.setClearColor(0x000000, 0);
 mount.appendChild(renderer.domElement);
 
+const root = new THREE.Group();
+scene.add(root);
+
 const LETTER_COLOR = new THREE.Color(0xf3f6ff);
 
 /**
@@ -34,6 +37,8 @@ const VIEW_PADDING_LEFT = 0.62;
 
 /** Mută întreg logo-ul spre stânga în cadru (echilibrează padding-ul asimetric al camerei). */
 const ROOT_PAN_X = -VIEW_PADDING_LEFT * 0.52;
+/** Mută logo-ul în sus, în pixeli de ecran. */
+const ROOT_PAN_Y_PX = 5;
 
 function fitRendererToMount() {
   const width = Math.max(1, Math.floor(mount.clientWidth));
@@ -49,6 +54,7 @@ function fitRendererToMount() {
   camera.updateProjectionMatrix();
 
   renderer.setSize(width, height);
+  root.position.y = (ROOT_PAN_Y_PX * viewHeight) / height;
 }
 
 const resizeObserver = new ResizeObserver(() => {
@@ -77,9 +83,6 @@ const intersectionObserver = new IntersectionObserver(
   { threshold: [0, 0.12, 0.25], rootMargin: "40px 0px 40px 0px" },
 );
 intersectionObserver.observe(mount);
-
-const root = new THREE.Group();
-scene.add(root);
 
 const assets = {
   orbit: "/assets/orbit.png",
@@ -187,8 +190,6 @@ async function init() {
   state.technologies.userData.text.renderOrder = 40;
   setDepthTest(state.center.group, false);
   setDepthTest(state.technologies.userData.text, false);
-
-  addAtmosphere();
 
   root.position.x = ROOT_PAN_X;
 
@@ -301,30 +302,6 @@ function getCombinedCenterX(items) {
   );
 
   return (bounds.min + bounds.max) / 2;
-}
-
-function addAtmosphere() {
-  const geometry = new THREE.BufferGeometry();
-  const count = 70;
-  const positions = new Float32Array(count * 3);
-
-  for (let i = 0; i < count; i += 1) {
-    positions[i * 3] = (Math.random() - 0.5) * 8;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 4.4;
-    positions[i * 3 + 2] = -0.5;
-  }
-
-  geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-  const material = new THREE.PointsMaterial({
-    color: 0xffd95a,
-    size: 0.018,
-    transparent: true,
-    opacity: 0.22,
-    depthWrite: false,
-  });
-
-  const points = new THREE.Points(geometry, material);
-  root.add(points);
 }
 
 function animate() {
