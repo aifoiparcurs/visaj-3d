@@ -7,7 +7,8 @@
   "redirects": [
     { "source": "/founder", "destination": "/sasa-cioringa", "permanent": true },
     { "source": "/founder/sasa-cioringa", "destination": "/sasa-cioringa", "permanent": true },
-    { "source": "/insights", "destination": "/blog", "permanent": true }
+    { "source": "/insights", "destination": "/blog", "permanent": true },
+    { "source": "/blog/centru-rd-novi-sad-2018", "destination": "/blog", "permanent": true }
   ],
   "headers": [
     {
