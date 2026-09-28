@@ -10,6 +10,7 @@ const prettyMap = {
   "/blog": "/blog.html",
   "/insights": "/blog.html",
   "/blog/conferinta-presa-novi-sad-2017": "/blog/conferinta-presa-novi-sad-2017.html",
+  "/blog/centru-rd-novi-sad-2018": "/blog/centru-rd-novi-sad-2018.html",
 };
 
 function prettyRoutes() {
@@ -42,6 +43,7 @@ export default defineConfig({
         founder: resolve(root, "sasa-cioringa.html"),
         blog: resolve(root, "blog.html"),
         article2017: resolve(root, "blog/conferinta-presa-novi-sad-2017.html"),
+        article2018: resolve(root, "blog/centru-rd-novi-sad-2018.html"),
       },
     },
   },
