@@ -4,6 +4,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/google0fb03484d5971d7.html",
+      "destination": "/google-site-verification.txt"
+    }
+  ],
   "redirects": [
     { "source": "/founder", "destination": "/sasa-cioringa", "permanent": true },
     { "source": "/founder/sasa-cioringa", "destination": "/sasa-cioringa", "permanent": true },
@@ -14,6 +20,12 @@
       "source": "/assets/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/google0fb03484d5971d7.html",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" }
       ]
     },
     {
