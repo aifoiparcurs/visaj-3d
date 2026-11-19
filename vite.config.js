@@ -17,6 +17,7 @@ const prettyMap = {
   "/blog/acord-institut-ai-novi-sad-2021": "/blog/acord-institut-ai-novi-sad-2021.html",
   "/blog/cinci-ani-continental-novi-sad-2022": "/blog/cinci-ani-continental-novi-sad-2022.html",
   "/blog/ux-mega-factory-kac-2023": "/blog/ux-mega-factory-kac-2023.html",
+  "/blog/mie-de-ingineri-novi-sad-2023": "/blog/mie-de-ingineri-novi-sad-2023.html",
   "/blog/camion-autonom-novi-sad-2024": "/blog/camion-autonom-novi-sad-2024.html",
   "/blog/timisoara-competitiva-2040": "/blog/timisoara-competitiva-2040.html",
 };
@@ -58,6 +59,7 @@ export default defineConfig({
         article2021ai: resolve(root, "blog/acord-institut-ai-novi-sad-2021.html"),
         article2022: resolve(root, "blog/cinci-ani-continental-novi-sad-2022.html"),
         article2023: resolve(root, "blog/ux-mega-factory-kac-2023.html"),
+        article2023rd: resolve(root, "blog/mie-de-ingineri-novi-sad-2023.html"),
         article2024: resolve(root, "blog/camion-autonom-novi-sad-2024.html"),
         article2026: resolve(root, "blog/timisoara-competitiva-2040.html"),
       },

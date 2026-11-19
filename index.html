@@ -174,7 +174,7 @@
         <nav id="site-nav" class="site-nav" aria-label="Principal">
           <a href="/sasa-cioringa">Fondator</a>
           <a href="#dezvoltam">Ce dezvoltăm</a>
-          <a href="#aifoiparcurs">AIFoiParcurs</a>
+          <a href="#produse">Produse</a>
           <a href="/blog">Blog</a>
           <a href="#intrebari">Întrebări</a>
           <a href="#contact" class="site-nav__cta">Contact</a>
@@ -200,7 +200,7 @@
             </blockquote>
 
             <div class="cta-row">
-              <a class="btn btn--primary" href="#aifoiparcurs">Vezi primul produs</a>
+              <a class="btn btn--primary" href="#produse">Vezi produsele</a>
               <a class="btn btn--ghost" href="#contact">Scrie-ne</a>
             </div>
           </div>
@@ -300,39 +300,73 @@
         </div>
       </section>
 
-      <section class="section section--product reveal" id="aifoiparcurs" aria-labelledby="product-title">
+      <section class="section section--product reveal" id="produse" aria-labelledby="product-title">
         <div class="shell">
-          <div class="product-showcase">
-            <div class="product-showcase__glow" aria-hidden="true"></div>
-            <div class="product-showcase__grid">
-              <div class="product-showcase__copy">
-                <p class="section__label section__label--on-dark">Primul produs Visaj Technologies</p>
-                <h2 id="product-title">AIFoiParcurs</h2>
-                <p class="product-showcase__lead">Foi de parcurs auto, generate și completate cu ajutorul AI.</p>
-                <p class="product-showcase__body">
-                  Unește date disparate într-un document unitar: mai puțin copy-paste, mai puține inconsistențe între
-                  segmente și mai mult timp pentru coordonare, nu pentru refaceri.
-                </p>
-                <p class="product-showcase__body">
-                  Pornește de la istoricul deplasărilor, tiparele rutiere și ce ai deja în sistem — propune foi complete,
-                  coerente și ușor de urmărit în exploatare.
-                </p>
-                <a class="btn btn--primary btn--lg" href="https://aifoiparcurs.ro" target="_blank" rel="noopener noreferrer">
-                  Deschide AIFoiParcurs
-                </a>
-              </div>
-              <div class="product-showcase__panel">
-                <img
-                  class="product-showcase__logo"
-                  src="/assets/aifoiparcurs-brand.png"
-                  alt="AIFoiParcurs — foi de parcurs auto generate cu AI"
-                  width="940"
-                  height="788"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
+          <header class="section-head section-head--center">
+            <h2 id="product-title">Produse</h2>
+          </header>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <h3>AIFoiParcurs</h3>
+              <p>Foi de parcurs auto, generate și completate cu ajutorul AI.</p>
+              <p>
+                Unește date disparate într-un document unitar: mai puțin copy-paste, mai puține inconsistențe între
+                segmente și mai mult timp pentru coordonare, nu pentru refaceri.
+              </p>
+              <p>
+                Pornește de la istoricul deplasărilor, tiparele rutiere și ce ai deja în sistem — propune foi complete,
+                coerente și ușor de urmărit în exploatare.
+              </p>
+              <a class="btn btn--primary" href="https://aifoiparcurs.ro" target="_blank" rel="noopener noreferrer">
+                Deschide AIFoiParcurs
+              </a>
+            </article>
+            <article class="product-card">
+              <h3>AIEvidenta</h3>
+              <p>Gestionează inventarul și echipa, pe unități.</p>
+              <p>
+                Ține stocul, achizițiile și articolele din depozit într-un flux clar: ce se extrage, ce se adaugă și ce
+                rămâne în fiecare cameră.
+              </p>
+              <p>
+                Echipa lucrează pe unitățile asignate, cu roluri și starea camerelor — de curățat sau curate — fără liste
+                ținute separat.
+              </p>
+              <a class="btn btn--primary" href="https://aievidenta.visajtech.com/" target="_blank" rel="noopener noreferrer">
+                Deschide AIEvidenta
+              </a>
+            </article>
+            <article class="product-card">
+              <h3>AIFactura</h3>
+              <p>Clienți, facturi și certificat CERTSIGN.</p>
+              <p>
+                Ține clienții și facturile la un loc și aduce documentele din SPV ANAF, ca să nu le descarci și să le
+                reintroduci manual.
+              </p>
+              <p>
+                Pornește de la certificatul CERTSIGN: conexiunea cu ANAF rămâne în firmă, iar facturile se pot urmări
+                fără pași repetați.
+              </p>
+              <a class="btn btn--primary" href="https://www.aifactura.com/login" target="_blank" rel="noopener noreferrer">
+                Deschide AIFactura
+              </a>
+            </article>
+            <article class="product-card">
+              <h3>AIBooking</h3>
+              <p>Gestionează rezervările și proprietățile.</p>
+              <p>
+                Ține proprietățile și rezervările online în același loc: perioada, camera și datele de facturare, fără să
+                le muți manual între liste.
+              </p>
+              <p>
+                Oaspetele rezervă pe pagina proprietății. Recepția vede sejurul, check-in-ul și factura pornind de la
+                aceeași rezervare.
+              </p>
+              <a class="btn btn--primary" href="https://www.aibooking.ro/" target="_blank" rel="noopener noreferrer">
+                Deschide AIBooking
+              </a>
+            </article>
           </div>
         </div>
       </section>
@@ -413,6 +447,11 @@
                 <time class="journal-card__date" datetime="2024-02-07">7 februarie 2024</time>
                 <h3>Camionul autonom făcut la Novi Sad</h3>
                 <p>Nivel patru: depășește, parchează și duce traseul fără șofer.</p>
+              </a>
+              <a class="journal-card" href="/blog/mie-de-ingineri-novi-sad-2023">
+                <time class="journal-card__date" datetime="2023-09-28">28 septembrie 2023</time>
+                <h3>O mie de ingineri la Novi Sad</h3>
+                <p>A treia locație R&amp;D, în IQ Center. Planul din 2017 fusese de 500.</p>
               </a>
               <a class="journal-card" href="/blog/ux-mega-factory-kac-2023">
                 <time class="journal-card__date" datetime="2023-02-23">23 februarie 2023</time>
@@ -574,7 +613,7 @@
           <a href="/sasa-cioringa">Fondator</a>
           <a href="/blog">Blog</a>
           <a href="#dezvoltam">Ce dezvoltăm</a>
-          <a href="#aifoiparcurs">AIFoiParcurs</a>
+          <a href="#produse">Produse</a>
           <a href="#intrebari">Întrebări</a>
           <a href="#contact">Contact</a>
         </div>
