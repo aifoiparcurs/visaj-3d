@@ -1,3 +1,7 @@
+import { inject } from "@vercel/analytics";
+
+inject();
+
 /**
  * Încarcă animația hero (Three.js) doar după ce pagina a fost afișată, astfel încât
  * textul și restul conținutului să nu fie blocate de biblioteca 3D la prima încărcare.

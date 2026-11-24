@@ -1,3 +1,7 @@
+import { inject } from "@vercel/analytics";
+
+inject();
+
 function initNav() {
   const navBtn = document.querySelector("[data-nav-toggle]");
   const nav = document.getElementById("site-nav");
