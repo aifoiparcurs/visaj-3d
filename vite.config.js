@@ -19,6 +19,7 @@ const prettyMap = {
   "/blog/ux-mega-factory-kac-2023": "/blog/ux-mega-factory-kac-2023.html",
   "/blog/mie-de-ingineri-novi-sad-2023": "/blog/mie-de-ingineri-novi-sad-2023.html",
   "/blog/camion-autonom-novi-sad-2024": "/blog/camion-autonom-novi-sad-2024.html",
+  "/blog/inca-165-milioane-kac-2024": "/blog/inca-165-milioane-kac-2024.html",
   "/blog/timisoara-competitiva-2040": "/blog/timisoara-competitiva-2040.html",
 };
 
@@ -61,6 +62,7 @@ export default defineConfig({
         article2023: resolve(root, "blog/ux-mega-factory-kac-2023.html"),
         article2023rd: resolve(root, "blog/mie-de-ingineri-novi-sad-2023.html"),
         article2024: resolve(root, "blog/camion-autonom-novi-sad-2024.html"),
+        article2024kac: resolve(root, "blog/inca-165-milioane-kac-2024.html"),
         article2026: resolve(root, "blog/timisoara-competitiva-2040.html"),
       },
     },
