@@ -21,6 +21,7 @@ const prettyMap = {
   "/blog/camion-autonom-novi-sad-2024": "/blog/camion-autonom-novi-sad-2024.html",
   "/blog/inca-165-milioane-kac-2024": "/blog/inca-165-milioane-kac-2024.html",
   "/blog/timisoara-competitiva-2040": "/blog/timisoara-competitiva-2040.html",
+  "/blog/marca-aifoiparcurs": "/blog/marca-aifoiparcurs.html",
 };
 
 function prettyRoutes() {
@@ -64,6 +65,7 @@ export default defineConfig({
         article2024: resolve(root, "blog/camion-autonom-novi-sad-2024.html"),
         article2024kac: resolve(root, "blog/inca-165-milioane-kac-2024.html"),
         article2026: resolve(root, "blog/timisoara-competitiva-2040.html"),
+        articleAifoiparcurs: resolve(root, "blog/marca-aifoiparcurs.html"),
       },
     },
   },

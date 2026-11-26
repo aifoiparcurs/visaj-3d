@@ -2519,3 +2519,114 @@ a.fh__portrait {
 .page-article .fpress {
   margin: 0.35rem 0 1.75rem;
 }
+
+.page-article .article-mark {
+  max-width: 62ch;
+  margin: 0.15rem 0 1.45rem;
+  text-align: left;
+}
+
+.page-article .article-mark + h2 {
+  clear: both;
+}
+
+.page-article .article-mark__status,
+.page-article .article-mark__name {
+  display: block;
+}
+
+.page-article .article-mark__status {
+  color: #f1b773;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.page-article .article-mark__name {
+  margin-top: calc(0.05rem + 2px);
+  color: #fff;
+  font-family: Roboto, "Segoe UI", sans-serif;
+  font-size: clamp(2.15rem, 3.1vw, 2.75rem);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.page-article .article-mark__name sup {
+  margin-left: 0.08em;
+  font-size: 0.42em;
+  font-style: normal;
+}
+
+.page-article .article-logo {
+  margin: 0 0 1.35rem;
+}
+
+.page-article .article-logo img {
+  display: block;
+  width: min(100%, 220px);
+  height: auto;
+  margin-inline: auto;
+  padding: 0.55rem 0.5rem 0.4rem;
+  background: #fff;
+  border-radius: 18px;
+}
+
+@media (min-width: 760px) {
+  .page-article .article-logo {
+    float: right;
+    width: 196px;
+    margin: 0.15rem 0 1.25rem 1.75rem;
+  }
+
+  .page-article .article-logo img {
+    width: 100%;
+  }
+}
+
+.page-article .article-certificate {
+  clear: both;
+  margin: 1.75rem 0 0.4rem;
+  max-width: 62ch;
+}
+
+.page-article .article-certificate a {
+  font-weight: 600;
+}
+
+.page-article .fchapter__note {
+  clear: both;
+}
+
+.article-sign {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.85rem;
+  margin: 2.35rem 0 0;
+  max-width: 62ch;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.article-sign__brand {
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.article-sign__brand span {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-sign a:hover {
+  color: var(--nav-link-hover);
+}
